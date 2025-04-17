@@ -1,0 +1,81 @@
+/* Resetting default browser values */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Centering Header and timeline to center */
+header, .timeline {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+/* Header style */
+header {
+    padding-top: 100px;
+}
+
+header p {
+    color: grey;
+}
+
+/* List style (ul.timeline) */
+.timeline {
+    list-style: none;
+    padding-top: 50px;
+    position: relative;
+}
+
+/* Timeline item style */
+.timeline li {
+    position: relative;
+    padding-left: 30px; /* Space for the dot */
+    margin-bottom: 20px; /* Space between events */
+    display: flex; /* Align items vertically */
+    align-items: center; /* Align time and content */
+}
+
+/* Create the dot with ::before */
+.timeline li::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Move dot to the left */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the dot */
+    width: 15px; /* Size of the dot */
+    height: 15px;
+    background-color: #3498db; /* Dot color */
+    border-radius: 50%; /* Makes it round */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Optional: Adds a shadow to the dot */
+}
+
+/* Optional: Add a vertical line connecting the dots */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 8px; /* Adjust to match the positioning of the dot */
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3498db; /* Vertical line color */
+}
+
+/* Style for the time and content */
+.timeline li time {
+    font-weight: bold;
+    margin-right: 15px; /* Add some spacing between time and content */
+}
+
+.timeline li .content {
+    font-size: 16px;
+    color: grey;
+}
